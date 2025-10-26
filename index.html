@@ -383,7 +383,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <!-- Ganti bagian ini di dalam file index.html -->
-<form onsubmit="handleSubmit(event)" action="https://formspree.io/f/xblpjvde" method="POST">
+<!-- Ganti SELURUH bagian form Anda dengan ini -->
+<form action="https://formspree.io/f/xblpjvde" method="POST">
     <div class="mb-3">
         <label for="name" class="form-label" data-translate-key="contact-form-name">Nama Lengkap</label>
         <input type="text" class="form-control" id="name" name="name" required>
@@ -558,13 +559,7 @@
             document.documentElement.lang = lang;
         }
         
-        function handleSubmit(event) {
-            event.preventDefault();
-            const currentLang = document.documentElement.lang;
-            const successMessage = translations[currentLang]['contact-form-success'] || 'Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.';
-            alert(successMessage);
-            event.target.reset();
-        }
+        
 
         // Add smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -584,3 +579,4 @@
 </body>
 
 </html>
+
