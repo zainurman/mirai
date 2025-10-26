@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="page-title">Mirai Trans Logistik Indonesia</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0d3b66; /* Biru Tua */
+            --secondary-color: #f4f4f9; /* Abu-abu Terang */
+            --accent-color: #f95738; /* Oranye */
+            --dark-color: #1a1a1a;
+            --light-color: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+        }
+
+        /* Navbar */
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+        .navbar {
+            background-color: var(--light-color) !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            color: var(--dark-color) !important;
+            transition: color 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+        .lang-switcher button {
+            border: 1px solid #ccc;
+            background: var(--light-color);
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 0 2px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        .lang-switcher button.active {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            border-color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(13, 59, 102, 0.7), rgba(13, 59, 102, 0.7)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310a?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-color);
+            padding: 150px 0;
+            text-align: center;
+        }
+        .hero-section h1 {
+            font-weight: 700;
+            font-size: 3rem;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        .btn-hero {
+            background-color: var(--accent-color);
+            color: var(--light-color);
+            padding: 12px 30px;
+            font-weight: 500;
+            border-radius: 50px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn-hero:hover {
+            background-color: #e04528;
+            color: var(--light-color);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* Services & Why Us Cards */
+        .service-card, .why-us-card {
+            background: var(--light-color);
+            border: 1px solid #e0e0e0;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover, .why-us-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .service-card i, .why-us-card i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        /* Partners Carousel */
+        .partner-logo {
+            height: 80px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* Fleet Section */
+        .fleet-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .fleet-card:hover {
+            transform: scale(1.05);
+        }
+        .fleet-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .fleet-card-body {
+            padding: 15px;
+        }
+        .fleet-card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--secondary-color);
+        }
+        .contact-info-item {
+            margin-bottom: 20px;
+        }
+        .contact-info-item i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-right: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            padding: 30px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mirai Trans</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#services" data-translate-key="nav-services">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#fleet" data-translate-key="nav-fleet">Armada</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partners" data-translate-key="nav-partners">Mitra</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#why-us" data-translate-key="nav-why-us">Keunggulan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-translate-key="nav-contact">Kontak</a></li>
+                </ul>
+                <div class="lang-switcher ms-3">
+                    <button onclick="switchLanguage('id')" class="active" data-lang="id">🇮🇩 ID</button>
+                    <button onclick="switchLanguage('en')" data-lang="en">🇬🇧 EN</button>
+                    <button onclick="switchLanguage('jp')" data-lang="jp">🇯🇵 JP</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 data-translate-key="hero-headline">Solusi Logistik Industri Masa Depan</h1>
+                <p class="lead" data-translate-key="hero-subheadline">Penyewaan Kendaraan Terpercaya untuk Kebutuhan Distribusi dan Operasional Pabrik Anda.</p>
+                <a href="#contact" class="btn btn-hero btn-lg mt-3" data-translate-key="hero-cta">Hubungi untuk Penawaran</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title" data-translate-key="services-title">Layanan Unggulan Kami</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="bi bi-truck"></i>
+                            <h4 data-translate-key="service-1-title">Sewa Armada Jangka Panjang</h4>
+                            <p data-translate-key="service-1-desc">Solusi hemat dan efisien untuk kebutuhan logistik berkelanjutan perusahaan Anda.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="bi bi-building"></i>
+                            <h4 data-translate-key="service-2-title">Logistik Pabrik</h4>
+                            <p data-translate-key="service-2-desc">Distribusi bahan baku dan produk jadi yang tepat waktu untuk mendukung rantai pasokan Anda.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <i class="bi bi-box-seam"></i>
+                            <h4 data-translate-key="service-3-title">Pengiriman Barang Berat</h4>
+                            <p data-translate-key="service-3-desc">Armada berkapasitas besar dan kokoh untuk pengiriman kargo industri dan material berat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section id="partners" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title" data-translate-key="partners-title">Mereka Telah Mempercayai Kami</h2>
+                <div id="partnerCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center align-items-center g-4">
+                                <div class="col-6 col-md-3 text-center"><img src="https://placehold.co/180x80/EFEFEF/AAAAAA?text=PT.+Indo+Manu" alt="Partner Logo" class="partner-logo img-fluid"></div>
+                                <div class="col-6 col-md-3 text-center"><img src="https://placehold.co/180x80/EFEFEF/AAAAAA?text=PT.+Nusantara+Steel" alt="Partner Logo" class="partner-logo img-fluid"></div>
+                                <div class="col-6 col-md-3 text-center"><img src="https://placehold.co/180x80/EFEFEF/AAAAAA?text=PT.+Yamato+Teknik" alt="Partner Logo" class="partner-logo img-fluid"></div>
+                                <div class="col-6 col-md-3 text-center"><img src="https://placehold.co/180x80/EFEFEF/AAAAAA?text=PT.+Sakura+Auto" alt="Partner Logo" class="partner-logo img-fluid"></div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center align-items-center g-4">
+                                <div class="col-6 col-md-3 text-center"><img src="https://placehold.co/180x80/EFEFEF/AAAAAA?text=PT.+Petrokimia+Gresik" alt="Partner Logo" class="partner-logo img-fluid"></div>
+                                <div class="col-6 col-md-3 text-center"><img src="https://placehold.co/180x80/EFEFEF/AAAAAA?text=PT.+Unilever+Indo" alt="Partner Logo" class="partner-logo img-fluid"></div>
+                                <div class="col-6 col-md-3 text-center"><img src="https://placehold.co/180x80/EFEFEF/AAAAAA?text=PT.+Astra+Otoparts" alt="Partner Logo" class="partner-logo img-fluid"></div>
+                                <div class="col-6 col-md-3 text-center"><img src="https://placehold.co/180x80/EFEFEF/AAAAAA?text=PT.+Kalbe+Farma" alt="Partner Logo" class="partner-logo img-fluid"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#partnerCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#partnerCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section id="why-us" class="section">
+            <div class="container">
+                <h2 class="section-title" data-translate-key="why-us-title">Keunggulan Mirai Trans</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="why-us-card d-flex">
+                            <i class="bi bi-gear-fill me-3"></i>
+                            <div>
+                                <h5 data-translate-key="why-1-title">Armada Modern & Terawat</h5>
+                                <p data-translate-key="why-1-desc">Semua unit dalam kondisi prima, usia muda, dan dirawat secara berkala untuk menjamin keamanan dan kenyamanan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="why-us-card d-flex">
+                            <i class="bi bi-person-badge-fill me-3"></i>
+                            <div>
+                                <h5 data-translate-key="why-2-title">Sopir Profesional & Terlatih</h5>
+                                <p data-translate-key="why-2-desc">Tim sopir berpengalaman, bersertifikat, dan mengutamakan keselamatan serta etika pengiriman yang tinggi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="why-us-card d-flex">
+                            <i class="bi bi-headset me-3"></i>
+                            <div>
+                                <h5 data-translate-key="why-3-title">Dukungan 24/7</h5>
+                                <p data-translate-key="why-3-desc">Tim customer service kami siap membantu Anda kapan saja, termasuk saat situasi darurat di lapangan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="why-us-card d-flex">
+                            <i class="bi bi-globe2 me-3"></i>
+                            <div>
+                                <h5 data-translate-key="why-4-title">Pemahaman Standar Internasional</h5>
+                                <p data-translate-key="why-4-desc">Kami berpengalaman dengan perusahaan asing, terutama Jepang, dan memahami pentingnya ketepatan, kebersihan, dan profesionalisme.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fleet Section -->
+        <section id="fleet" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title" data-translate-key="fleet-title">Armada Kami</h2>
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <div class="fleet-card">
+                            <img src="https://images.unsplash.com/photo-1603721008789-9183de1c17a2?q=80&w=1974&auto=format&fit=crop" alt="CDE Engkel">
+                            <div class="fleet-card-body">
+                                <h5 class="fleet-card-title">CDE Engkel Bak</h5>
+                                <p class="small">Ideal untuk distribusi dalam kota.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="fleet-card">
+                            <img src="https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?q=80&w=2070&auto=format&fit=crop" alt="Fuso Wing Box">
+                            <div class="fleet-card-body">
+                                <h5 class="fleet-card-title">Fuso Wing Box</h5>
+                                <p class="small">Akses mudah untuk muatan palet.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="fleet-card">
+                            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=2064&auto=format&fit=crop" alt="Tronton">
+                            <div class="fleet-card-body">
+                                <h5 class="fleet-card-title">Tronton</h5>
+                                <p class="small">Kapasitas muatan besar.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="fleet-card">
+                            <img src="https://images.unsplash.com/photo-1563460716037-460a32724924?q=80&w=2070&auto=format&fit=crop" alt="Container Chassis">
+                            <div class="fleet-card-body">
+                                <h5 class="fleet-card-title">Container Chassis</h5>
+                                <p class="small">Untuk pengiriman container 20/40 feet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title" data-translate-key="contact-title">Hubungi Kami</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Ganti bagian ini di dalam file index.html -->
+<form onsubmit="handleSubmit(event)" action="URL_ENDPOINT_FORMSPREE_ANDA_DISINI" method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label" data-translate-key="contact-form-name">Nama Lengkap</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label" data-translate-key="contact-form-email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-3">
+        <label for="message" class="form-label" data-translate-key="contact-form-message">Pesan</label>
+        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-hero" data-translate-key="contact-form-submit">Kirim Pesan</button>
+</form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact-info-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Jl. Contoh Alamat No. 123, Jakarta Industrial Park, Jakarta 12345, Indonesia.</span>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="bi bi-telephone-fill"></i>
+                            <span>+62 21 1234 5678</span>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="bi bi-envelope-fill"></i>
+                            <span>info@mirailogistik.co.id</span>
+                        </div>
+                         <div class="contact-info-item">
+                            <i class="bi bi-whatsapp"></i>
+                            <span>+62 812 3456 7890</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mirai Trans Logistik Indonesia. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript for Language Switching -->
+    <script>
+        const translations = {
+            id: {
+                "page-title": "Mirai Trans Logistik Indonesia",
+                "nav-services": "Layanan",
+                "nav-fleet": "Armada",
+                "nav-partners": "Mitra",
+                "nav-why-us": "Keunggulan",
+                "nav-contact": "Kontak",
+                "hero-headline": "Solusi Logistik Industri Masa Depan",
+                "hero-subheadline": "Penyewaan Kendaraan Terpercaya untuk Kebutuhan Distribusi dan Operasional Pabrik Anda.",
+                "hero-cta": "Hubungi untuk Penawaran",
+                "services-title": "Layanan Unggulan Kami",
+                "service-1-title": "Sewa Armada Jangka Panjang",
+                "service-1-desc": "Solusi hemat dan efisien untuk kebutuhan logistik berkelanjutan perusahaan Anda.",
+                "service-2-title": "Logistik Pabrik",
+                "service-2-desc": "Distribusi bahan baku dan produk jadi yang tepat waktu untuk mendukung rantai pasokan Anda.",
+                "service-3-title": "Pengiriman Barang Berat",
+                "service-3-desc": "Armada berkapasitas besar dan kokoh untuk pengiriman kargo industri dan material berat.",
+                "partners-title": "Mereka Telah Mempercayai Kami",
+                "why-us-title": "Keunggulan Mirai Trans",
+                "why-1-title": "Armada Modern & Terawat",
+                "why-1-desc": "Semua unit dalam kondisi prima, usia muda, dan dirawat secara berkala untuk menjamin keamanan dan kenyamanan.",
+                "why-2-title": "Sopir Profesional & Terlatih",
+                "why-2-desc": "Tim sopir berpengalaman, bersertifikat, dan mengutamakan keselamatan serta etika pengiriman yang tinggi.",
+                "why-3-title": "Dukungan 24/7",
+                "why-3-desc": "Tim customer service kami siap membantu Anda kapan saja, termasuk saat situasi darurat di lapangan.",
+                "why-4-title": "Pemahaman Standar Internasional",
+                "why-4-desc": "Kami berpengalaman dengan perusahaan asing, terutama Jepang, dan memahami pentingnya ketepatan, kebersihan, dan profesionalisme.",
+                "fleet-title": "Armada Kami",
+                "contact-title": "Hubungi Kami",
+                "contact-form-name": "Nama Lengkap",
+                "contact-form-email": "Email",
+                "contact-form-message": "Pesan",
+                "contact-form-submit": "Kirim Pesan"
+            },
+            en: {
+                "page-title": "Mirai Trans Logistics Indonesia",
+                "nav-services": "Services",
+                "nav-fleet": "Fleet",
+                "nav-partners": "Partners",
+                "nav-why-us": "Why Us",
+                "nav-contact": "Contact",
+                "hero-headline": "The Future of Industrial Logistics",
+                "hero-subheadline": "Reliable Vehicle Rental for Your Distribution and Factory Operational Needs.",
+                "hero-cta": "Get a Quote",
+                "services-title": "Our Featured Services",
+                "service-1-title": "Long-Term Vehicle Rental",
+                "service-1-desc": "A cost-effective and efficient solution for your company's sustainable logistics needs.",
+                "service-2-title": "Factory Logistics",
+                "service-2-desc": "On-time distribution of raw materials and finished goods to support your supply chain.",
+                "service-3-title": "Heavy Goods Shipping",
+                "service-3-desc": "Large capacity and sturdy fleet for shipping industrial cargo and heavy materials.",
+                "partners-title": "They Have Trusted Us",
+                "why-us-title": "The Mirai Trans Advantage",
+                "why-1-title": "Modern & Well-Maintained Fleet",
+                "why-1-desc": "All units are in prime condition, young, and regularly maintained to ensure safety and comfort.",
+                "why-2-title": "Professional & Trained Drivers",
+                "why-2-desc": "A team of experienced, certified drivers who prioritize safety and high delivery ethics.",
+                "why-3-title": "24/7 Support",
+                "why-3-desc": "Our customer service team is ready to assist you anytime, including during on-site emergencies.",
+                "why-4-title": "Understanding of International Standards",
+                "why-4-desc": "We are experienced with foreign companies, especially Japanese, and understand the importance of punctuality, cleanliness, and professionalism.",
+                "fleet-title": "Our Fleet",
+                "contact-title": "Contact Us",
+                "contact-form-name": "Full Name",
+                "contact-form-email": "Email",
+                "contact-form-message": "Message",
+                "contact-form-submit": "Send Message"
+            },
+            jp: {
+                "page-title": "ミライ・トランス・ロジスティクス・インドネシア",
+                "nav-services": "サービス",
+                "nav-fleet": "車両",
+                "nav-partners": "パートナー",
+                "nav-why-us": "強み",
+                "nav-contact": "お問い合わせ",
+                "hero-headline": "産業物流の未来を創造する",
+                "hero-subheadline": "貴社の配送および工場の運用ニーズに対応する信頼性の高い車両リース。",
+                "hero-cta": "お見積もり",
+                "services-title": "主力サービス",
+                "service-1-title": "長期車両リース",
+                "service-1-desc": "貴社の持続可能な物流ニーズに対応する、費用対効果の高い効率的なソリューション。",
+                "service-2-title": "工場物流",
+                "service-2-desc": "サプライチェーンを支援するため、原材料および完成品の適時配送。",
+                "service-3-title": "重量物輸送",
+                "service-3-desc": "産業貨物や重量物を輸送するための、大容量で頑丈な車両。",
+                "partners-title": "私たちを信頼してくださった企業",
+                "why-us-title": "ミライ・トランスの強み",
+                "why-1-title": "最新の整備された車両",
+                "why-1-desc": "すべての車両は最高の状態にあり、安全性と快適性を保証するために若く、定期的にメンテナンスされています。",
+                "why-2-title": "プロフェッショナルで訓練されたドライバー",
+                "why-2-desc": "安全性と高い配達倫理を重視する、経験豊富で認定されたドライバーチーム。",
+                "why-3-title": "24時間365日サポート",
+                "why-3-desc": "現場での緊急時を含め、いつでもお客様をサポートする準備ができているカスタマーサービスチーム。",
+                "why-4-title": "国際基準の理解",
+                "why-4-desc": "特に日本企業との経験豊富で、時間厳守、清潔さ、プロフェッショナリズムの重要性を理解しています。",
+                "fleet-title": "私たちの車両",
+                "contact-title": "お問い合わせ",
+                "contact-form-name": "お名前",
+                "contact-form-email": "メール",
+                "contact-form-message": "メッセージ",
+                "contact-form-submit": "メッセージを送信"
+            }
+        };
+
+        function switchLanguage(lang) {
+            // Update active button style
+            document.querySelectorAll('.lang-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.lang-switcher button[data-lang="${lang}"]`).classList.add('active');
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerText = translations[lang][key];
+                }
+            });
+
+            // Update html lang attribute
+            document.documentElement.lang = lang;
+        }
+        
+        function handleSubmit(event) {
+            event.preventDefault();
+            const currentLang = document.documentElement.lang;
+            const successMessage = translations[currentLang]['contact-form-success'] || 'Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.';
+            alert(successMessage);
+            event.target.reset();
+        }
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
